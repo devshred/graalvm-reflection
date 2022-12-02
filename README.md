@@ -18,6 +18,7 @@ native-image --no-fallback ReflectionExample
 ./reflectionexample SomeClass foo
 ./reflectionexample SomeClass ping
 ```
+_both foo() and ping() are failing_
 
 # Using tracing agent to generate configuration files
 ```shell
@@ -28,9 +29,10 @@ java \
 cat META-INF/native-image/reflect-config.json
 ```
 
-# Compile to native with configuration files -> foo() works, ping() still fails
+# Compile to native with configuration files
 ```shell
 native-image --no-fallback ReflectionExample
 ./reflectionexample SomeClass foo
 ./reflectionexample SomeClass ping
 ```
+_foo() works, ping() still fails_
